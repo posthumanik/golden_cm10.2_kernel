@@ -1,0 +1,23 @@
+CROSS_COMPILE=~/android/toolchains/prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.8/bin/arm-linux-androideabi-
+HOST_CC=gcc
+LOCAL_BUILD_DIR=~/android/kernels/golden_cm10.2_kernel
+TARGET_DIR=~/android/kernels/golden_cm10.2_kernel
+SYSTEM_PARTITION="/dev/block/mmcblk0p22"
+DEFCONFIG=cm_golden_defconfig
+
+FLASH_BOOT='write_raw_image("/tmp/boot.img", "boot")'
+
+# ----
+
+N_CORES=4
+VERSION=build 1
+
+# ----
+
+BANNER=`cat <<EOF
+ui_print("**********************************************");
+ui_print("*                                            *");
+ui_print("  VERSION: build 1                     ");
+ui_print("*                                            *");
+ui_print("**********************************************");
+EOF`
